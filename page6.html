@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7F8B9C;
+        }
+        nav {
+            padding: 20px 8%;
+            text-align: center;
+            position: absolute;
+            width: 100%; 
+            overflow: hidden;
+           top: 0;
+           left: 0;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+        }
+        nav .logo{
+            width: 100px; 
+        }
+        nav ul li{
+            list-style: none;
+            display: inline-block;
+            margin-left: 40px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 17px;
+        }
+        nav a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .back-video{
+           position: absolute;
+           right: 0;
+           bottom: 0;
+           z-index: -1;
+        }
+        @media (min-aspect-ratio: 88){
+	.back-video{
+         width: auto; 
+         height: 100%;
+        }
+        }
+        @media (max-aspect-ratio: 88){
+	.back-video{
+         width: 100%; 
+         height: auto;
+        }
+        .content{
+            text-align: center;
+        }
+        .content h4{
+            margin-top: 5%;
+            font-size: 70px;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+        .content h4:hover{
+            -webkit-text-stroke: 2px #fff;
+            color: transparent;
+        }
+        .content h5{
+            margin-top: 5%;
+            font-size: 50px;
+            color: black;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+        .content h5:hover{
+            -webkit-text-stroke: 2px black;
+            color: transparent;
+        }
+        .content p{
+             color: #fff;
+            font-size: 15px;
+        }
+        .content li{
+             color: #fff;
+            font-size: 15px;
+         }
+        .row{
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-col{
+            text-align: justify;
+            flex-basis: 40%;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            padding: 15px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        .content-col:hover{
+            box-shadow: 0 0 50px 0px rgba(0,0,0,0.5);
+        }
+       
+        .section1{
+            width: 80%;
+            margin: auto;
+            text-align: justify;
+            padding: 15px 12px;
+        }    
+        .section1-col{
+            flex-basis: 31%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            margin-left: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .section1-col img{
+            width: 90%;
+            height: 100%;
+            border-radius: 10px;
+            top: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .layer{
+            text-align: center;
+            height: 100%;
+            width: 90%;
+            position: absolute;
+            top: 20px;
+            margin-bottom: 30px;
+            left: 0;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        .layer:hover{
+            background: rgba(1,2,44,0.7);
+            height: 100%;
+            width: 90%;
+            top: 30px;
+            margin-bottom: 30px;
+            left: 0;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        .layer h3{
+            width: 100%;
+            font-weight: 500;
+            color: #fff;
+            font-size: 10px
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-125px);
+            position: relative;
+            opacity: 0;
+            transition: 0.00001s;
+        }
+        .layer:hover h3{
+        top: 10%;
+        opacity: 1;
+        }
+        .layer p{
+            width: 100%;
+            font-weight: 500;
+            color: #fff;
+            font-size: 15px
+            top: 0;
+            left: 50%;
+            transform: translateX(-125px);
+            position: absolute;
+            opacity: 0;
+            transition: 0.00001s;
+        }
+        .layer:hover p{
+        top: 7%;
+        opacity: 1;
+        }
+        .section2{
+             margin-top: 0;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-wrap: wrap;
+        }
+         .container{
+             position: relative;
+             width: 1100px;
+             margin-top: 0;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-wrap: wrap;
+             padding: 100px; 
+        }
+        .container .mycard{
+             position: relative;
+             max-width: 400px;
+             height: 150px;
+             background: wheat;
+             margin: 5px 5px;
+             padding: 20px 15px;
+             display: flex;
+             flex-direction: column; 
+             box-shadow: 0 3px 50px rgba(0,0,0,0.5);
+             transition: 0.4s ease-in-out;
+        }
+          .container .mycard:hover{
+              height: 500px;  
+        }
+        .container .mycard .cimg{
+             position: relative;
+             width: 368px;
+             height: 200px;
+             top: -60px
+             left: 20px
+             z-index: 1;
+             box-shadow: 0 3px 50px rgba(0,0,0,0.5);
+        }
+         .container .mycard .cimg img{
+             width: 368px;
+             height: 100%;
+             border-radius: 6px;
+        }
+         .container .mycard .cdetail{
+             position: relative;
+             margin-top: 50px;
+             padding: 20px 15px;
+             text-align: center;
+             color: black;
+             visibility: invisible;
+             opacity: 0;
+             transition: 0.3s ease-in-out;
+        }
+         .container .mycard:hover .cdetail{
+             visibility: visible;
+             opacity: 1;
+             margin-top: -10px;
+        }
+        .section3{
+             margin-left: 100px;
+             margin-right: 100px;
+        }
+
+
+</style>
+</head>
+
+
+
+<body>
+<section>
+<div class="hero">
+ <video autoplay loop muted plays-inline class="back-video">
+        <source src="elnino.mp4" type="video/mp4">
+    </video>
+	<nav>
+                       <a href="page8.html"><img src="logoo.png" class="logo"></a>
+	<ul>
+        <li><a href="page11.html">Home</a></li>
+        <li><a href="page2.html" class="btn">Tropical Cyclones</a></li>
+        <li><a href="page3.html" class="btn">Thunderstorm</a></li>
+       <li><a href="page4.html" class="btn">Flood</a></li>
+       <li> <a href="page5.html" class="btn">Storm Surge</a></li>
+       <li> <a href="page6.html" class="btn">El Niño and La Niña</a></li>
+        <li><a href="page7.html" class="btn">Tools</a></li>
+		</ul>
+	</nav>
+
+<div class="content">
+<h4>El Niño and La Niña</h4>
+</div>
+</section>
+
+
+
+
+<div class="content">
+<h5>El Niño</h5>
+</div>
+
+<section id="section1">
+<div class="row">
+    <div class="section1-col">
+    <img src="el1.jpg">
+           <div class="layer">
+           <p>El Niño and La Niña are complex weather patterns
+resulting from variations in ocean temperatures in the
+Equatorial Pacific. These two phenomena are opposite
+phases of what is known as the El Niño-Southern
+Oscillation (ENSO) cycle. 
+</p>
+           </div>
+     </div>
+
+    <div class="section1-col">
+    <img src="el2.jpg">
+           <div class="layer">
+           <p>The ENSO cycle is scientific term that describes the
+fluctuations in temperature between the ocean and
+atmosphere in the east-central Equatorial Pacific. El Niño was originally observed in Southern America
+as unusually warm seawater.
+</p>
+           </div>
+          </div>
+
+    <div class="section1-col">
+    <img src="el3.jpg">
+           <div class="layer">
+           <p> El Niño in the Philippines usually starts between
+December and February. It is indicated by a delayed onset or early termination
+of the rainy season, and weak monsoon and tropical
+cyclone activity.
+</p>
+    </div>
+    </div>
+
+   <div class="section1-col">
+    <img src="el4.jpg">
+           <div class="layer">
+           <p> It is also associated with severe dry spells or droughts
+which can be just as damaging. A primary concern during El Niño season is water
+supply.
+</p>
+    </div>
+    </div>
+
+</section>
+</div>
+
+
+
+<div class="content">
+<h5>La Niña</h5>
+</div>
+
+<section id="section1">
+<div class="row">
+    <div class="section1-col">
+    <img src="la1.jpg">
+           <div class="layer">
+           <p>La Niña is characterized by sea surface temperatures
+lower than average.
+
+</p>
+           </div>
+     </div>
+
+    <div class="section1-col">
+    <img src="la2.jpg">
+           <div class="layer">
+           <p>La Niña is caused by the upward movement of cold
+water by unusually strong trade winds and ocean
+currents in a process called upwelling.
+
+</p>
+           </div>
+          </div>
+
+    <div class="section1-col">
+    <img src="la3.jpg">
+           <div class="layer">
+           <p>  La Niña in the Philippines is also correlated with
+destructive typhoons, heavy rainfall, and associated
+landslides and floods.
+
+</p>
+    </div>
+    </div>
+
+   <div class="section1-col">
+    <img src="la4.jpg">
+           <div class="layer">
+           <p> It is considered the counterpart to El Niño.
+</p>
+    </div>
+    </div>
+
+</section>
+</div>
+
+
+
+
+
+
+
+    <div class="section2">
+<div class="content">
+<h5>Signs of impending El Niño/La Niña</h5>
+</div>
+
+
+
+ <div class="section3">
+<section>
+<br>
+<br>
+<br>
+<p>We can not see the signs of El Niño/La Niña.
+However, using sophisticated instruments, scientist
+can gather data that are subjected into different
+modelling analysis to predict and monitor different
+parameters that affect El Niño Southern Oscillation
+phenomenon.
+
+<h3>MONITORING ENSO</h3>
+<li>El Niño and La Niña are monitored, assessed, and
+predicted through the Ocean Niño Index (ONI).</li>
+<li>ONI as the average deviations in sea surface
+temperatures (SST’s) in the Niño region over a period
+of three months.</li>
+<li>La Niña has been declared in the Philippines by
+PAGASA in November 2017 and was predicted to last
+until February 2018.</li>
+
+<h3>FORECASTING ENSO</h3>
+<li>ENSO phenomenon happens in the Equatorial Pacific
+region</li>
+<li>Though there are some indicators in the land that the
+phenomenon is happening, predicting it requires
+intensive study, monitoring and analysis.
+</li>
+<li>Scientists from NOAA (National Oceanic and
+Atmospheric Administration) and other agencies use a
+variety of tools and techniques to monitor and forecast
+changes in the Pacific Ocean and the impact of those
+changes on global weather patterns.</li>
+<li>In the tropical Pacific Ocean, El Niño is detected by
+many methods including satellites, moored buoys,
+drifting buoys, sea level analysis, and expandable
+buoys.</li>
+<li>Large computer models of the global ocean and
+atmosphere use data from the ENSO observing system
+as input to predict El Niño.</li>
+</section>
+</div>
+
+</p>
+
+<br>
+<br>
+<br>
+
+<div class="content">
+<h5>Technology Used in Prediction</h5>
+</div>
+<section>
+<div class="container">
+      <div class="mycard">
+              <div class="cimg">
+                     <img src="satellites.jpg">
+              </div>
+              <div class="cdetail">
+                     <h4>SATELLITES</h4>
+<br>
+                     <p>Satellites provide data on tropical rainfall, wind, and
+ocean temperature patterns, as well as changes in
+conditions for hurricane formation.
+
+ </p>
+              </div>
+      </div>
+
+
+<div class="mycard">
+              <div class="cimg">
+                     <img src="ocean.jpg">
+              </div>
+              <div class="cdetail">
+                     <h4>OCEAN BUOYS</h4>
+<br>
+                     <p> They help in monitoring sea-surface and upper
+ocean temperatures.
+
+ </p>
+              </div>
+</div>
+
+
+</div>
+</section>
+</div>
+
+ <div class="section3">
+<section>
+
+<h3>Other tools used:</h3>
+<br>
+<li>Radiosondes help in monitoring global weather and
+climate patterns, and to monitor and predict El Niño
+and La Niña influences on weather.
+</li>
+<li>Super computers are used to gather all of the weather
+data around the world and put in into useful formats
+used by scientists.</li>
+<li>They also run sophisticated computer models to help
+scientists better understand and predict El Niño and La
+Niña.</li>
+<li>An entire suite of diagnostic and prediction tools run on highspeed computers that allow El Niño and La Niña to be monitored in near real-time.</li>
+
+
+</section>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="section3">
+<section>
+<div class="content">
+<h5>Preparedness and Mitigation</h5>
+</div>
+<br>
+<br>
+<br>
+<p><b style="font-family: Lucida Handwriting, cursive">What to do before El Nino/La Nina</b></p>
+<li>Know what heat hazard may occur where you are and
+learn how to plan for extreme heat.</li>
+<li>Plan changes in your daily activities to avoid strenuous
+work during the warmest part of the day.
+</li>
+<li>Consult a physician when affected by extreme heat.</li>
+<li>Undergo training on first aid.</li>
+<li>Interview local physicians and paramedics about the
+dangers of sunburn, heat exhaustion, heat stroke and
+other possible conditions caused by excessive heat.</li>
+<li>Turn the faucet off firmly to prevent leakage.</li>
+<li>Use the water dipper and pail instead of the shower
+while taking a bath.
+</li>
+<li>Instead of running water, use a glass of water while
+brushing your teeth.</li>
+<li>Buy new, water-efficient toilet bowls that consume only
+2.6-4 liters of water every flush.</li>
+<li>Discard leftover food before washing dishes.</li>
+<li>Wash all your clothes at once.</li>
+<li>Reuse water from your laundry to flush your toilet, clean
+your car, or water your garden plants.</li>
+<li>Instead of a water hose, use only a pail and a towel in
+washing your car.</li>
+<li>Water your plants only before sunrise or after sunset to
+prevent water loss due to vaporization.</li>
+<li>Collect rainwater with pails and basins and store it for
+future use (e.g., watering the plants, cleaning the
+house).</li>
+<br>
+<p><b style="font-family: Lucida Handwriting, cursive">What to do during El Nino/La Nina</b></p>
+<li>Switch off the water valve in buildings that are not
+operational at night.</li>
+<li>Report broken pipelines and illegal water connections
+to proper authorities.
+</li>
+<li>Fix the leaks of your home before it rains.</li>
+<li>Clean out your gutters and downspouts.</li>
+<li>Plan changes in your daily activities to avoid strenuous
+work during the warmest part of the day.</li>
+<li>uring a drought, conserve water by placing a brick, or
+another large solid object in your toilet tank to reduce
+the amount of water used in flushing.
+</li>
+<li> Stay indoors as much as possible.</li>
+<li>Avoid extreme temperature changes like cool shower
+immediately after coming in from hot temperatures.</li>
+<li>Keep cool.</li>
+<li>Vacuum air conditioner filters weekly during periods of
+high use.</li>
+<li>Wear loose-fitting, lightweight, light-colored clothing that
+will cover as much skin as possible.</li>
+<li>Protect face and head by wearing a wide brimmed hat.</li>
+<li>Drink plenty of water even if you do not feel thirsty, to
+prevent dehydration.</li>
+<li>Take frequent breaks if you must work outdoors.</li>
+<li>Use a buddy system when working in extreme heat.</li>
+<li>Eat frequent small meals for easy digestion.</li>
+<li>Never leave children or pets alone in closed vehicles.</li>
+
+</section>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+</body>
+</html>
